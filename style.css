@@ -224,16 +224,78 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 100px;
     background-color: lightcyan;
 }
 
-#about h3 {
+#about-header-container {
+    margin-top: 40px;
+}
+
+#about-header-container h3 {
+    text-align: center;
     font-size: 1.6rem;
 }
 
-#about p {
+#about-header-container p {
     color: var(--grayish-violet);
+    text-align: center;
+}
+
+    /* INFO CARDS */
+#cards-container {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 60px;
+    margin-top: 80px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 80%;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    z-index: 10;
+}
+
+.card-img-container {
+    display: flex;
+    place-content: center;
+    margin-top: -50px;
+    padding: 24px;
+    border-radius: 50%;
+    background-color: var(--dark-violet);
+    z-index: 10;
+}
+
+.card h3 {
+    padding: 10px;
+}
+
+.card p {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-bar {
+    position: absolute;
+    margin-top: -80px;
+    height: 100px;
+    width: 8px;
+    background-color: var(--cyan);
+    z-index: -1;
+}
+
+.card-bar-desktop {
+    display: none;
 }
 
     /* SHORTEN COMPONENT */
@@ -329,5 +391,50 @@ header {
     #shorten-submit-btn {
         width: 30%;
     }
+
+}
+
+@media screen and (min-width: 1050px) {
+
+    /* INFO CARDS */
+#cards-container {
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 20px;
+}
+
+.card {
+   width: 338px;
+   height: 280px;
+}
+
+.card-img-container {
+   margin-left: -180px;
+}
+
+.card-bar {
+    display: none;
+}
+
+.card-bar-desktop {
+    display: block;
+    width: 20px;
+    height: 8px;
+    margin-top: -50px;
+    margin-left: 360px;
+    background-color: var(--cyan);
+}
+
+.bar-dk-2 {
+    margin-top: -110px;
+}
+
+.card-two {
+    margin-top: 80px;
+}
+
+.card-three {
+    margin-top: 160px;
+}
 
 }
