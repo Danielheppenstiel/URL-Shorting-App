@@ -244,12 +244,12 @@ header {
 
     /* INFO CARDS */
 #cards-container {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 60px;
     margin-top: 80px;
+    padding-bottom: 80px;
 }
 
 .card {
@@ -407,6 +407,37 @@ header {
     cursor: pointer;
 }
 
+/* GET STARTED SECTION */
+#get-started {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    background-color: var(--dark-violet);
+    background-image: url(./images/bg-boost-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+}
+
+#get-started h2 {
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+}
+
+#get-started button {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    background-color: var(--cyan);
+    width: 180px;
+    height: 50px;
+    border-radius: 30px
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 375px) {
 
@@ -484,6 +515,11 @@ header {
     
     .copy-btn {
         width: 40%;
+    }
+
+    /* GET STARTED */
+    #get-started {
+        background-image: url(./images/bg-boost-desktop.svg);
     }
 
 
