@@ -305,7 +305,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 100px;
+    height: 140px;
     width: 80%;
     max-width: 1050px;
     background-color: var(--dark-violet);
@@ -361,6 +361,7 @@ header {
     background-color: white;
     height: 160px;
     border-radius: 10px;
+    overflow: auto;
 }
 
 .shorten-link-container {
@@ -372,6 +373,7 @@ header {
 }
 
 .inital-link-container {
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     border-bottom: 1px solid var(--gray);
@@ -382,6 +384,7 @@ header {
     text-decoration: none;
     color: var(--very-dark-violet);
     padding: 10px;
+    overflow: auto;
 }
 
 .shorten-link-container {
@@ -513,6 +516,7 @@ footer h2 {
 
     /* SHORTEN COMPONENT FORM */
     #form-container {
+        height: 100px;
         flex-direction: row;
     }
 

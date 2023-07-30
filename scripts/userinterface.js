@@ -53,8 +53,10 @@ class UI {
         shortLinkContainerDiv.appendChild(copyBtn);
 
         // Append to Url List / DOM
-        this.urlList.appendChild(fullLinkContainerDiv);
-        this.urlList.appendChild(shortLinkContainerDiv);
+        liItem.appendChild(fullLinkContainerDiv);
+        liItem.appendChild(shortLinkContainerDiv);
+
+        this.urlList.appendChild(liItem);
 
     };
 

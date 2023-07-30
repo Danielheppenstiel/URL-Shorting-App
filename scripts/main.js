@@ -1,5 +1,6 @@
 // Global Variables
 const navBars = document.querySelector('#nav-bars');
+const submitBtn = document.querySelector('#shorten-submit-btn');
 
 // Imports
 import UI from './userinterface.js';
@@ -14,7 +15,11 @@ const getData = new GetData();
 
 navBars.addEventListener('click', (e) => {
     ui.toggleMobileMenu(e);
-})
+});
 
-getData.shortenUrl('https://github.com/Danielheppenstiel/URL-Shorting-App');
+
+submitBtn.addEventListener('click', () => {
+    const inputValue = document.querySelector('#shorten-input').value;
+    getData.shortenUrl(inputValue);
+})
     
