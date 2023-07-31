@@ -21,6 +21,20 @@ navBars.addEventListener('click', (e) => {
     ui.toggleMobileMenu(e);
 });
 
+window.addEventListener('resize', () => {
+    const bars = document.querySelectorAll('.bar');
+    const dropDownMenu = document.querySelector('#drop-down-menu');
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth >= 768) {
+        dropDownMenu.style.display = 'none';
+        bars.forEach((bar) => {
+            bar.classList.remove('open');
+        });
+    };
+
+});
+
 
     // URL Form Submit / Error Handling
 submitBtn.addEventListener('click', () => {
@@ -49,9 +63,12 @@ urlList.addEventListener('click', (e) => {
         ui.copyUrl(e.target.previousElementSibling.innerText);
         e.target.classList.add('copied');
         e.target.innerText = 'Copied!';
-    } else {
-        console.log('target not hit');
-    }
+
+        setTimeout(() => {
+            e.target.classList.remove('copied');
+            e.target.innerText = 'Copy';
+        }, 3000);
+
+    };
 
 });
-

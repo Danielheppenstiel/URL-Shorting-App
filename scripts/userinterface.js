@@ -10,8 +10,7 @@ class UI {
 
         // URL input
         this.urlInput = document.querySelector('#shorten-input');
-        // this.copyBtn = document.querySelector('.copy-btn');
-    }
+    };
 
     toggleMobileMenu(e) {
         const barsArr = Array.from(this.mobileNavBars.children);
@@ -83,8 +82,6 @@ class UI {
         .catch((error) => {
             console.log(error);
         });
-
-        // this.copyBtn.classList.add('copied');
         
     };
 
