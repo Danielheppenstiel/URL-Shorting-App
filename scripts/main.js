@@ -1,6 +1,8 @@
 // Global Variables
 const navBars = document.querySelector('#nav-bars');
 const submitBtn = document.querySelector('#shorten-submit-btn');
+const copyBtn = document.querySelectorAll('.copy-btn');
+
 
 // Imports
 import UI from './userinterface.js';
@@ -19,7 +21,21 @@ navBars.addEventListener('click', (e) => {
 
 
 submitBtn.addEventListener('click', () => {
-    const inputValue = document.querySelector('#shorten-input').value;
-    getData.shortenUrl(inputValue);
-})
     
+    const input = document.querySelector('#shorten-input');
+    let inputValue = input.value;
+
+    if(inputValue === '') {
+        ui.showError();
+    } else {
+        getData.shortenUrl(inputValue);
+        ui.removeError();
+        setTimeout(() => {
+            input.value = '';
+            input.placeholder = 'Shorten another URL..';
+        }, 500);
+    };
+
+});
+
+

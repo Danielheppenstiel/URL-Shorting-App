@@ -1,4 +1,5 @@
 class UI {
+
     constructor() {
             // Mobile Nav
         this.mobileNavBars = document.querySelector('#nav-bars');
@@ -6,6 +7,9 @@ class UI {
 
         // Shorten Links
         this.urlList = document.querySelector('#url-list');
+
+        // URL input
+        this.urlInput = document.querySelector('#shorten-input');
     }
 
     toggleMobileMenu(e) {
@@ -60,6 +64,15 @@ class UI {
 
     };
 
+    showError() {
+        this.urlInput.classList.add('error');
+        this.urlInput.placeholder = 'Please enter valid url..'
+    };
+
+    removeError() {
+        this.urlInput.classList.remove('error');
+        this.urlInput.placeholder = 'Shorten a link here..'
+    }
 
 
 };

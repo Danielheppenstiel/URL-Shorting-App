@@ -8,12 +8,19 @@ class GetData {
 
     shortenUrl(url) {
         fetch(`${this.apiUrl}/shorten?url=${url}`)
-            .then(response => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Something went wrong')
+                } else {
+                    return response.json();
+                };
+            })
                 .then((linkData) => {
                     ui.addLinkToDom(linkData);
                 })
                 .catch((error) => {
-                    console.log(error)
+                    alert(error);
+                    ui.showError();
                 });
     };
 
