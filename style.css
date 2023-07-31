@@ -414,6 +414,10 @@ header {
     cursor: pointer;
 }
 
+.copied {
+    background-color: var(--very-dark-blue);
+}
+
 /* GET STARTED SECTION */
 #get-started {
     display: flex;

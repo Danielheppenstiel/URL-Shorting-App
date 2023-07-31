@@ -10,6 +10,7 @@ class UI {
 
         // URL input
         this.urlInput = document.querySelector('#shorten-input');
+        // this.copyBtn = document.querySelector('.copy-btn');
     }
 
     toggleMobileMenu(e) {
@@ -72,7 +73,20 @@ class UI {
     removeError() {
         this.urlInput.classList.remove('error');
         this.urlInput.placeholder = 'Shorten a link here..'
-    }
+    };
+
+    copyUrl(url) {
+        navigator.clipboard.writeText(url)
+        .then(() => {
+            console.log('url successfully copied');
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+        // this.copyBtn.classList.add('copied');
+        
+    };
 
 
 };
