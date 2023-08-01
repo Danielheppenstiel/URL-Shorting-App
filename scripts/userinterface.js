@@ -12,6 +12,7 @@ class UI {
         this.urlInput = document.querySelector('#shorten-input');
     };
 
+
     toggleMobileMenu(e) {
         const barsArr = Array.from(this.mobileNavBars.children);
         barsArr.forEach((bar) => {
