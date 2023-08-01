@@ -17,7 +17,7 @@ class GetData {
                 };
             })
                 .then((linkData) => {
-                    ui.addLinkToDom(linkData);
+                    ui.addLinkToDom(linkData.result.original_link, linkData.result.short_link);
                     this.addToLocalStorage(linkData.result.original_link, linkData.result.short_link);
                 })
                 .catch((error) => {

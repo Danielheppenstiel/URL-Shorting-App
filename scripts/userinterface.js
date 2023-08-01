@@ -26,7 +26,7 @@ class UI {
         };
     };
 
-    addLinkToDom(linkData) {
+    addLinkToDom(fullLink, shortLink) {
 
         // URL list item
         const liItem = document.createElement('li');
@@ -38,8 +38,8 @@ class UI {
         
         const fullLinkAnchor = document.createElement('a');
             fullLinkAnchor.classList.add('full-link');
-                fullLinkAnchor.setAttribute('href', linkData.result.original_link);
-                    fullLinkAnchor.innerText = linkData.result.original_link;
+                fullLinkAnchor.setAttribute('href', fullLink);
+                    fullLinkAnchor.innerText = fullLink;
 
         fullLinkContainerDiv.appendChild(fullLinkAnchor);
 
@@ -48,8 +48,8 @@ class UI {
             shortLinkContainerDiv.classList.add('shorten-link-container');
         const shortLinkAnchor = document.createElement('a');
             shortLinkAnchor.classList.add('shorten-link');
-                shortLinkAnchor.setAttribute('href', linkData.result.short_link);
-                    shortLinkAnchor.innerText = linkData.result.short_link;
+                shortLinkAnchor.setAttribute('href', shortLink);
+                    shortLinkAnchor.innerText = shortLink;
         const copyBtn = document.createElement('button');
             copyBtn.classList.add('copy-btn');
                 copyBtn.innerText = 'Copy';

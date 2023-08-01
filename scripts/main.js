@@ -4,7 +4,6 @@ const submitBtn = document.querySelector('#shorten-submit-btn');
 
 const urlList = document.querySelector('#url-list');
 
-
 // Imports
 import UI from './userinterface.js';
 import GetData from './fetchData.js'
@@ -15,6 +14,14 @@ const getData = new GetData();
 
 
 // Event Listeners
+
+    // Add items from local storage to the DOM on DOM Load
+document.addEventListener('DOMContentLoaded', () => {
+   const allLinks =  JSON.parse(localStorage.getItem('links'));
+   allLinks.forEach((link) => {
+        ui.addLinkToDom(link.fullLink, link.shortLink);
+   });
+});
 
     // Nav Mobile Menu
 navBars.addEventListener('click', (e) => {
