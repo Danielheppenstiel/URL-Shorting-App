@@ -27,32 +27,47 @@ class GetData {
     };
 
     // add to Local Storage
- addToLocalStorage(fullLink, shortLink) {
+    addToLocalStorage(fullLink, shortLink) {
 
-    let arrayOfLinks = [];
+        let arrayOfLinks = [];
 
-    const existingLinks = localStorage.getItem('links');
+        const existingLinks = localStorage.getItem('links');
 
-    if (existingLinks) {
-        arrayOfLinks = JSON.parse(existingLinks);
-    }
+        if (existingLinks) {
+            arrayOfLinks = JSON.parse(existingLinks);
+        }
 
-    // will return true || false
-    const isDuplicate = arrayOfLinks.some((link) => {
-       return link.fullLink === fullLink || link.shortLink === shortLink
-    });
+        // will return true || false
+        const isDuplicate = arrayOfLinks.some((link) => {
+        return link.fullLink === fullLink || link.shortLink === shortLink
+        });
 
-    if(!isDuplicate) {
-        const linkObject = {fullLink, shortLink};
-        arrayOfLinks.push(linkObject);
-        const updatedArrayOfLinks = JSON.stringify(arrayOfLinks);
-        localStorage.setItem('links', updatedArrayOfLinks);
-    } else {
-        console.log('Duplicate link found. Not adding to ls')
+        if(!isDuplicate) {
+            const linkObject = {fullLink, shortLink};
+            arrayOfLinks.push(linkObject);
+            const updatedArrayOfLinks = JSON.stringify(arrayOfLinks);
+            localStorage.setItem('links', updatedArrayOfLinks);
+        } else {
+            console.log('Duplicate link found. Not adding to ls')
+        };
+
+    };
+
+    // Remove item from local storage
+    removeFromLocalStorage(fullLink, shortLink) {
+        const existingLinks = JSON.parse(localStorage.getItem('links'));
+
+        const arrayOfLinks = existingLinks.filter((link) => {
+            return link.fullLink !== fullLink || link.shortLink !== shortLink;
+        });
+
+        localStorage.setItem('links', JSON.stringify(arrayOfLinks));
     };
 
 };
 
-};
-
 export default GetData;
+
+
+// get items from local storage
+// re add all items that dont match delete items back to local storage

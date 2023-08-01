@@ -79,3 +79,20 @@ urlList.addEventListener('click', (e) => {
     };
 
 });
+
+    // Delete items
+urlList.addEventListener('dblclick', (e) => {
+
+    if (e.target.parentElement.classList.contains('url-list-item')) {
+        const fullLink = e.target.parentElement.firstChild.firstChild.innerText;
+        const shortLink = e.target.parentElement.lastChild.firstChild.innerText;
+        e.target.parentElement.remove();
+        getData.removeFromLocalStorage(fullLink, shortLink);
+    } else if (e.target.classList.contains('url-list-item')) {
+        const fullLink = e.target.firstChild.firstChild.innerText;
+        const shortLink = e.target.lastChild.firstChild.innerText;
+        e.target.remove();
+        getData.removeFromLocalStorage(fullLink, shortLink);
+    };
+
+});
