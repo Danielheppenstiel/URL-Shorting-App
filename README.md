@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![alt text](./assets/images/age%20calc%20final.png)
+![alt text](./images/final%20img.png);
 
 ### Links
 
@@ -47,7 +47,7 @@ Users should be able to:
 
 ### What I learned
 
-This project required me to work with JavaScript's Date object and explore different methods that were crucial in solving this challenge.
+I used the Model-View-Controller design pattern to complete this challenge by separating the data logic, the UI state and the controls. I used JavaScript ES6 Classes to implement Object Oriented Programming.
 
 ## Author
 
